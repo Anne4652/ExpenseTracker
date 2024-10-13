@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Your Expenses</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Amount</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let expense of expenses">
+          <td>{{ expense.amount }}</td>
+          <td>{{ expense.description }}</td>
+          <td>{{ expense.date }}</td>
+          <td>{{ expense.categoryName }}</td>
+          <td>
+            <a [routerLink]="['/expenses/edit', expense.id]" class="btn btn-warning">Edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/expenses/new" class="btn btn-success">Add New Expense</a>
+  </div>
+  
